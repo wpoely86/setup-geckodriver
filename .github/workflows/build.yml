@@ -10,7 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Get yarn cache directory path
-        run: echo "yarncachedir=$(yarn cache dir)" >> $env:GITHUB_ENV
+        run: echo "yarncachedir=$(yarn cache dir)" >> $GITHUB_ENV
+        shell: bash
       - uses: actions/cache@v3
         with:
           path: ${{ env.yarncachedir }}
@@ -38,7 +39,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Get yarn cache directory path
-        run: echo "yarncachedir=$(yarn cache dir)" >> $env:GITHUB_ENV
+        run: echo "yarncachedir=$(yarn cache dir)" >> $GITHUB_ENV
+        shell: bash
       - uses: actions/cache@v3
         with:
           path: ${{ env.yarncachedir }}
